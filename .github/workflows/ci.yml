@@ -44,7 +44,7 @@ jobs:
         arguments: build
         
     - name: Docker Build & Push Action
-      uses: mr-smithers-excellent/docker-build-push@v5.6
+      uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image:  agriii927/github_actions_for_java_demoapp
 #         image:  ${{ secrets.DOCKERHUB_USERNAME }}/github_actions_for_java_demoapp
