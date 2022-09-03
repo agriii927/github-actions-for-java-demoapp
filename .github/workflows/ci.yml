@@ -68,6 +68,8 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
+        context: .
+        dockerfile: ./Dockerfile
         push: true
         tags: agriii927/github_actions_for_java_demoapp:latest
          
