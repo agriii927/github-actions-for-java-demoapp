@@ -45,7 +45,8 @@ jobs:
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v5.6
       with:
-        image:  ${{ secrets.DOCKERHUB_USERNAME }}/github_actions_for_java_demoapp
+        image:  agriii927/github_actions_for_java_demoapp
+#         image:  ${{ secrets.DOCKERHUB_USERNAME }}/github_actions_for_java_demoapp
         #посмотреть какие еще registry бывают
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
