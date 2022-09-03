@@ -40,3 +40,10 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
+    
+    - name: Docker Build & Push Action
+      uses: mr-smithers-excellent/docker-build-push@v5.6
+      with:
+        image:  ${{ secrets.DOCKERHUB_USERNAME }}/github_actions_for_java_demoapp
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
