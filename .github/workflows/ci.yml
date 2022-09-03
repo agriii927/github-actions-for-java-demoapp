@@ -81,7 +81,7 @@ jobs:
       run: ./gradlew build
   
     - name: debug
-      run: ls .
+      run: tree -a
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
