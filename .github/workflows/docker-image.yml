@@ -1,0 +1,27 @@
+name: build and push Docker image to Dockerhub
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix: 
+        os: [ubuntu-latest] 
+
+    steps:          
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: agriii927/github_actions_for_java_demoapp:latest
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
