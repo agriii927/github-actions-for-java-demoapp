@@ -58,7 +58,7 @@ jobs:
       with:
         context: .
         dockerfile: ./Dockerfile
-        tags: agriii927/github_actions_for_java_demoapp:dirty-${GITHUB_SHA}
+        tags: agriii927/github_actions_for_java_demoapp:dirty-${{GITHUB_SHA}}
         
     - name: Build and push for pushes to repo
       uses: docker/build-push-action@v3
@@ -67,4 +67,4 @@ jobs:
         context: .
         dockerfile: ./Dockerfile
         push: true
-        tags: agriii927/github_actions_for_java_demoapp:${GITHUB_SHA}
+        tags: agriii927/github_actions_for_java_demoapp:${{GITHUB_SHA}}
