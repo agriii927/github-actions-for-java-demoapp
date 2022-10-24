@@ -58,8 +58,7 @@ jobs:
       with:
         context: .
         dockerfile: ./Dockerfile
-        push: false
-        tags: agriii927/github_actions_for_java_demoapp:latest
+        tags: agriii927/github_actions_for_java_demoapp:dirty-latest
         
     - name: Build and push for pushes to repo
       uses: docker/build-push-action@v3
@@ -69,12 +68,3 @@ jobs:
         dockerfile: ./Dockerfile
         push: true
         tags: agriii927/github_actions_for_java_demoapp:latest
-        
-#     # Alternative solution
-#     - name: Docker Build & Push Action
-#       uses: mr-smithers-excellent/docker-build-push@v4
-#       with:
-#         image:  agriii927/github_actions_for_java_demoapp
-#         registry: docker.io
-#         username: ${{ secrets.DOCKERHUB_USERNAME }}
-#         password: ${{ secrets.DOCKERHUB_PASSWORD }}
